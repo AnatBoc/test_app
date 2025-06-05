@@ -34,14 +34,17 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: _changeColor,
-      child: Scaffold(
-        backgroundColor: _color,
-        body: const Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[Text('Hello there')],
+    return MouseRegion(
+      cursor: SystemMouseCursors.click,
+      child: GestureDetector(
+        onTap: _changeColor,
+        child: Scaffold(
+          backgroundColor: _color,
+          body: const Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[Text('Hello there')],
+            ),
           ),
         ),
       ),
