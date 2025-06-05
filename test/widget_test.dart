@@ -4,20 +4,25 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:test_app/main.dart';
 
 void main() {
+  //Ideally tests should be structured better with groups groups
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
-    // Build our app and trigger a frame.
     await tester.pumpWidget(const Main());
+    expect(find.text('Hello there'), findsOneWidget);
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
-
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
+    // Check if initial color is White
+    expect(
+      (tester.firstWidget(find.byType(Scaffold)) as Scaffold).backgroundColor,
+      Colors.white,
+    );
+    await tester.tap(find.byType(GestureDetector));
     await tester.pump();
 
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    // Check if color changed
+    expect(
+      (tester.firstWidget(find.byType(Scaffold)) as Scaffold).backgroundColor,
+      isNot(Colors.white),
+    );
   });
+
+  //If its needed, color generator fuction also can be covered by tests
 }

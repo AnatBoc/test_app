@@ -5,15 +5,13 @@ void main() {
   runApp(const Main());
 }
 
-/// [Main] - The main class
+/// The main class
 class Main extends StatelessWidget {
   /// Just key here
   const Main({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: HomePage(),
-    );
+    return const MaterialApp(home: HomePage());
   }
 }

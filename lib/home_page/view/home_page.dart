@@ -2,9 +2,9 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
-/// [HomePage] - The home page
+/// HomePage explanation
 class HomePage extends StatefulWidget {
-  /// Just key here
+  /// Just key here to pass
   const HomePage({super.key});
 
   @override
@@ -16,7 +16,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   Color _color = Colors.white;
 
-  /// if we will use this method from >1 classes, should be 
+  /// if we will use this method from >1 classes, should be
   /// moved to utils folder
   Color colorGenerator() {
     const maxColor = 0xFFFFFF;
@@ -41,9 +41,7 @@ class _HomePageState extends State<HomePage> {
         body: const Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text('Hello there'),
-            ],
+            children: <Widget>[Text('Hello there')],
           ),
         ),
       ),
